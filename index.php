@@ -8,17 +8,25 @@ class User {
   public $email;
   public $password;
 
-  public function __construct($_username, $_email, $_password) {
+  public function __construct($_username, $_password) {
     $this->username = $_username;
-    $this->email = $_email;
     $this->password = $_password;
+  }
+
+  public function printEmail($username) {
+    $this->email = $username . "@gmail.com";
   }
 }
 
 
-$user1 = new User("pinco", "pinco@gmail.com", "aaaaaaaa");
-$user2 = new User("pallo", "pallo@gmail.com", "bbbbbbbb");
-$user3 = new User("pippo", "pippo@gmail.com", "cccccccc");
+$user1 = new User("pinco", "aaaaaaaa");
+$user1->printEmail($user1->username);
+
+$user2 = new User("pallo", "bbbbbbbb");
+$user2->printEmail($user2->username);
+
+$user3 = new User("pippo", "cccccccc");
+$user3->printEmail($user3->username);
 
 $users = [$user1, $user2, $user3];
 
